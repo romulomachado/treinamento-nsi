@@ -5,19 +5,10 @@
 class Retangulo:
 
     def __init__(self, base, altura):
-        self.base = base
-        self.altura = altura
-
-    def get_lados(self):
-        lados = (self.base, self.altura)
-        return lados
-
-    def set_lados(self, base, altura):
-        self.base = base
-        self.altura = altura
+        self.lados = [base, altura]
 
     def calcular_area(self):
-        return self.base * self.altura
+        return self.lados[0] * self.lados[1]
 
     def calcular_perimetro(self):
-        return self.base * 2 + self.altura * 2
+        return self.lados[0] * 2 + self.lados[1] * 2
