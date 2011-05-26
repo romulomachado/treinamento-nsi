@@ -8,7 +8,11 @@ class Retangulo:
         self.base = base
         self.altura = altura
 
-    def alterar_lados(self, base, altura):
+    def get_lados(self):
+        lados = (self.base, self.altura)
+        return lados
+
+    def set_lados(self, base, altura):
         self.base = base
         self.altura = altura
 
