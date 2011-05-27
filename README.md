@@ -6,6 +6,6 @@ Códigos Python OO + TDD
 Para rodar os testes:
 -------------------
 
-Apenas rode::
+Apenas rode:
 
     make test
