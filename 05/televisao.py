@@ -18,7 +18,7 @@ class Televisao:
         if self.volume_atual < 99:
             self.volume_atual += 1
         else:
-            return "Volume maximo atingido"
+            return "Volume maximo atingido" #TODO: raise Exception
 
     def diminuir_volume(self):
         if self.volume_atual > 0:
