@@ -2,7 +2,7 @@
 #-*- coding:utf-8 -*-
 
 
-class Conta:
+class Conta(object):
     def __init__(self, dono, numero, saldo = 0.0):
         self.dados = [dono, numero, saldo]
 

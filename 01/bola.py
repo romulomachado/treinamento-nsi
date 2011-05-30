@@ -2,7 +2,7 @@
 #-*- coding:utf-8 -*-
 
 
-class Bola:
+class Bola(object):
 
     def __init__(self, cor):
         self.cor = cor

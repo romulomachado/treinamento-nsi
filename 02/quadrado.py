@@ -2,7 +2,7 @@
 #-*- coding:utf-8 -*-
 
 
-class Quadrado:
+class Quadrado(object):
 
     def __init__(self, lado):
         self.lado = lado

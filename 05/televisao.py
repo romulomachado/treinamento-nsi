@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 
-class Televisao:
+class Televisao(object):
 
     def __init__(self):
         self.canal_atual = 2

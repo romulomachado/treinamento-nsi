@@ -2,7 +2,7 @@
 #-*- coding:utf-8 -*-
 
 
-class Retangulo:
+class Retangulo(object):
 
     def __init__(self, base, altura):
         self.lados = [base, altura]
