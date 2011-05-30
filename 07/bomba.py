@@ -30,10 +30,3 @@ class Bomba(object):
             return quantidade * self.preco_por_litro
         else:
             raise QuantidadeNaoSuportada('Quantidade nao disponivel na bomba!')
-
-# É necessário também que seja permitido
-#abastecer por valor (retornando a quantidade de combustível
-#abastecida), abastecer por quantidade de litros (retornando o valor a
-#ser pago). Deve ser permitido também alterar o valor do preço por
-#litro. Deve ser tratada a situação de não haver combustível suficiente
-#na bomba para um determinado abastecimento.
