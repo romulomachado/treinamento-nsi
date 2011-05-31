@@ -1,6 +1,18 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 
+class VolumeMaximoAtingido(Exception):
+    pass
+
+class VolumeMinimoAtingido(Exception):
+    pass
+
+class FimDosCanais(Exception):
+    pass
+
+class InicioDosCanais(Exception):
+    pass
+
 class Televisao(object):
 
     def __init__(self):
@@ -18,24 +30,24 @@ class Televisao(object):
         if self.volume_atual < 99:
             self.volume_atual += 1
         else:
-            return "Volume maximo atingido" #TODO: raise Exception
+            raise VolumeMaximoAtingido('Volume maximo atingido!')
 
     def diminuir_volume(self):
         if self.volume_atual > 0:
             self.volume_atual -= 1
         else:
-            return "Volume minimo atingido"
+            raise VolumeMinimoAtingido('Volume minimo atingido!')
 
     def passar_canal(self):
         if self.canal_atual < 180:
             self.canal_atual += 1
         else:
             self.canal_atual = 2
-            return "Fim dos canais"
+            raise FimDosCanais('Fim dos canais')
 
     def voltar_canal(self):
         if self.canal_atual > 2:
             self.canal_atual -= 1
         else:
             self.canal_atual = 180
-            return "Inicio dos canais"
+            raise InicioDosCanais('Inicio dos canais')

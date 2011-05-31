@@ -1,6 +1,6 @@
 import unittest
 from should_dsl import should
-from televisao import Televisao
+from televisao import *
 
 
 class TestExercicio5(unittest.TestCase):
@@ -29,7 +29,9 @@ class TestExercicio5(unittest.TestCase):
 
     def teste_aumentar_volume_valor_invalido(self):
         self.televisao.volume_atual = 99
-        self.televisao.aumentar_volume() |should| equal_to("Volume maximo atingido")
+        def aumentar_volume():
+            self.televisao.aumentar_volume()
+        aumentar_volume |should| throw(VolumeMaximoAtingido)
 
     def teste_diminuir_volume(self):
         self.televisao.diminuir_volume()
@@ -37,7 +39,9 @@ class TestExercicio5(unittest.TestCase):
 
     def teste_diminuir_volume_valor_invalido(self):
         self.televisao.volume_atual = 0
-        self.televisao.diminuir_volume() |should| equal_to("Volume minimo atingido")
+        def diminuir_volume():
+            self.televisao.diminuir_volume()
+        diminuir_volume |should| throw(VolumeMinimoAtingido)
 
     def teste_passar_canal(self):
         self.televisao.passar_canal()
@@ -45,7 +49,9 @@ class TestExercicio5(unittest.TestCase):
 
     def teste_passar_canal_valor_invalido(self):
         self.televisao.canal_atual = 180
-        self.televisao.passar_canal() |should| equal_to("Fim dos canais")
+        def passar_canal():
+            self.televisao.passar_canal()
+        passar_canal |should| throw(FimDosCanais)
         self.televisao.canal_atual |should| equal_to(2)
 
     def teste_voltar_canal(self):
@@ -54,5 +60,7 @@ class TestExercicio5(unittest.TestCase):
         self.televisao.canal_atual |should| equal_to(29)
 
     def teste_voltar_canal_valor_invalido(self):
-        self.televisao.voltar_canal() |should| equal_to("Inicio dos canais")
+        def voltar_canal():
+            self.televisao.voltar_canal()
+        voltar_canal |should| throw(InicioDosCanais)
         self.televisao.canal_atual |should| equal_to(180)
